@@ -1,13 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
+import Home from '../templates/home';
 
-export default function Home() {
+export default function Index() {
   return (
     <div>
       <Head>
         <title>MKS Sistemas</title>
       </Head>
-      <h2>Hello World</h2>
+      <Home />
     </div>
   );
 }

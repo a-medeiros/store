@@ -1,4 +1,5 @@
 import GlobalStyle from '../styles/global.style';
+import 'antd/dist/antd.css';
 
 function MyApp({ Component, pageProps }) {
   return (
