@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import {
   Container,
@@ -9,8 +9,15 @@ import {
   CartContainer,
   NumberOfItems
 } from './styles';
+import Cart from '../Cart';
 
 export default function Header() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  function openCart() {
+    setIsCartOpen(true);
+  }
+
   return (
     <Container>
       <LogoContainer>
@@ -19,10 +26,11 @@ export default function Header() {
           <SecondaryText>Sistemas</SecondaryText>
         </Logo>
       </LogoContainer>
-      <CartContainer>
+      <CartContainer onClick={() => openCart()}>
         <ShoppingCartOutlined style={{ fontSize: '20px' }} />
         <NumberOfItems>0</NumberOfItems>
       </CartContainer>
+      <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
     </Container>
   );
 }

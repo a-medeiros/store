@@ -51,6 +51,7 @@ export const CartContainer = styled.div`
   background-color: white;
   border-radius: 8px;
   margin-right: 88px;
+  cursor: pointer;
 `;
 
 export const NumberOfItems = styled.p`
