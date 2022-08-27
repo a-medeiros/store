@@ -64,11 +64,11 @@ export default function Cart({ isCartOpen, setIsCartOpen }: Props) {
   }
 
   return (
-    <Container isOpen={isCartOpen}>
+    <Container data-testid="cart-container" isOpen={isCartOpen}>
       <div>
         <HeaderContainer>
           <CartTitle>Carrinho de Compras</CartTitle>
-          <Close onClick={() => closeCart()}>
+          <Close data-testid="close-menu" onClick={() => closeCart()}>
             <CloseOutlined style={{ fontSize: '20px', color: 'white' }} />
           </Close>
         </HeaderContainer>

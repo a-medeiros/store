@@ -29,7 +29,7 @@ export default function Header() {
           <SecondaryText>Sistemas</SecondaryText>
         </Logo>
       </LogoContainer>
-      <CartContainer onClick={() => openCart()}>
+      <CartContainer data-testid="cart-button" onClick={() => openCart()}>
         <ShoppingCartOutlined style={{ fontSize: '20px' }} />
         <NumberOfItems>{userCart?.length}</NumberOfItems>
       </CartContainer>

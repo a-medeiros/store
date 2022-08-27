@@ -154,6 +154,7 @@ export const ProductName = styled.p`
   margin: 0;
 
   @media (max-width: 440px) {
+    width: 200px;
     text-align: center;
     padding: 5px;
   }

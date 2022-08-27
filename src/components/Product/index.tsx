@@ -33,9 +33,7 @@ export default function Product({
   }
 
   return (
-    <CardAntd
-      cover={<Image width={140} height={150} alt="example" src={photo} />}
-    >
+    <CardAntd cover={<Image width={140} height={150} alt={name} src={photo} />}>
       <CardHeader>
         <ProductName>{name}</ProductName>
         <PriceContainer>
