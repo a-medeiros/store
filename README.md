@@ -16,5 +16,10 @@ To start the development environment, run the following command:
 npm run dev
 ```
 
+You can run the tests by running:
+```
+npm run test
+```
+
 ## Deploy
 https://store-challenge.netlify.app/
