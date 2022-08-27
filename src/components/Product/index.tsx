@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import Image from 'next/image';
+import { addToCart } from '../../features/cart';
 import {
   CardHeader,
   CardDescription,
@@ -11,6 +13,7 @@ import {
   ButtonAntd,
   ButtonContainer
 } from './styles';
+import convertToBR from '../../utils/convertToBR';
 
 import { Props } from './types';
 
@@ -22,13 +25,11 @@ export default function Product({
   photo,
   price
 }: Props) {
-  function convertToBR(value: string) {
-    const newValue = parseFloat(value).toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-      minimumFractionDigits: 0
-    });
-    return newValue;
+  const dispatch = useDispatch();
+
+  function handleAddToCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    dispatch(addToCart({ id, name, description, brand, photo, price, cart }));
   }
 
   return (
@@ -44,7 +45,7 @@ export default function Product({
       <CardDescription>
         <Description>{description}</Description>
       </CardDescription>
-      <ButtonContainer>
+      <ButtonContainer onClick={() => handleAddToCart()}>
         <ButtonAntd>Comprar</ButtonAntd>
       </ButtonContainer>
     </CardAntd>

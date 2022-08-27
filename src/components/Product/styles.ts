@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Card, Button } from 'antd';
+import { Card } from 'antd';
 
 export const CardAntd = styled(Card)`
   width: 217px;
@@ -73,15 +73,12 @@ export const ButtonContainer = styled.div`
   width: 217px;
 `;
 
-export const ButtonAntd = styled(Button)`
+export const ButtonAntd = styled.button`
   background-color: #0f52ba;
+  border: 1px solid #0f52ba;
   border-radius: 0px 0px 8px 8px;
   width: 100%;
   color: white;
-
-  :hover {
-    background-color: #115fd4;
-    border: none;
-    color: white;
-  }
+  height: 33px;
+  cursor: pointer;
 `;
