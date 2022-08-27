@@ -99,7 +99,7 @@ export const ProductsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 600px;
+  height: 460px;
   overflow-y: scroll;
   overflow-x: hidden;
 `;
