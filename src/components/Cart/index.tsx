@@ -10,6 +10,8 @@ import {
   CartQuantityTitle,
   CartTitle,
   Close,
+  DeleteProduct,
+  DeleteProduct2,
   Container,
   HeaderContainer,
   ImageContainer,
@@ -79,6 +81,15 @@ export default function Cart({ isCartOpen, setIsCartOpen }: Props) {
             <>
               {userCart.map((item, index: number) => (
                 <Product key={item.name}>
+                  <DeleteProduct2
+                    size="18px"
+                    position="absolute"
+                    onClick={() => handleRemoveFromCart(index)}
+                  >
+                    <CloseOutlined
+                      style={{ fontSize: '12px', color: 'white', padding: 0 }}
+                    />
+                  </DeleteProduct2>
                   <ImageContainer>
                     <Image
                       alt="product"
@@ -103,7 +114,7 @@ export default function Cart({ isCartOpen, setIsCartOpen }: Props) {
                       </QuantityContainer>
                     </CartQuantity>
                     <Price>{convertToBR(item.price)}</Price>
-                    <Close
+                    <DeleteProduct
                       size="18px"
                       position="absolute"
                       onClick={() => handleRemoveFromCart(index)}
@@ -111,7 +122,7 @@ export default function Cart({ isCartOpen, setIsCartOpen }: Props) {
                       <CloseOutlined
                         style={{ fontSize: '12px', color: 'white', padding: 0 }}
                       />
-                    </Close>
+                    </DeleteProduct>
                   </ProductInfo>
                 </Product>
               ))}

@@ -11,11 +11,15 @@ export const Container = styled.div<ContainerProps>`
   justify-content: space-between;
   z-index: 1;
   width: ${props => (props.isOpen ? '450px' : '0px')};
-  height: 100%;
+  min-height: 100%;
   background-color: #0f52ba;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
   transition: width 0.2s;
   overflow: hidden;
+
+  @media (max-width: 516px) {
+    width: ${props => (props.isOpen ? '100%' : '0px')};
+  }
 `;
 
 export const HeaderContainer = styled.div`
@@ -54,11 +58,54 @@ export const Close = styled.div<CloseProps>`
   cursor: pointer;
 `;
 
+export const DeleteProduct = styled.div<CloseProps>`
+  position: ${props => props.position};
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  border-radius: 50px;
+  width: ${props => props.size || '34px'};
+  height: ${props => props.size || '34px'};
+  cursor: pointer;
+
+  @media (max-width: 440px) {
+    display: none;
+  }
+`;
+
+export const DeleteProduct2 = styled.div<CloseProps>`
+  position: ${props => props.position};
+  right: 0;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  border-radius: 50px;
+  width: ${props => props.size || '34px'};
+  height: ${props => props.size || '34px'};
+  cursor: pointer;
+
+  @media (max-width: 440px) {
+    display: flex;
+  }
+`;
+
 export const ProductsContainer = styled.div`
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 export const Product = styled.div`
+  position: relative;
   width: 379px;
   height: 95px;
   background: #ffffff;
@@ -66,6 +113,13 @@ export const Product = styled.div`
   border-radius: 8px;
   display: flex;
   margin-bottom: 20px;
+
+  @media (max-width: 440px) {
+    width: 70%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ProductInfo = styled.div`
@@ -74,6 +128,12 @@ export const ProductInfo = styled.div`
   align-items: center;
   position: relative;
   width: 100%;
+
+  @media (max-width: 440px) {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -92,11 +152,17 @@ export const ProductName = styled.p`
   width: 105px;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 440px) {
+    text-align: center;
+    padding: 5px;
+  }
 `;
 
 export const CartQuantity = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 5px;
 `;
 
 export const CartQuantityTitle = styled.p`
@@ -152,6 +218,10 @@ export const Price = styled.p`
   color: #000000;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 440px) {
+    padding: 10px;
+  }
 `;
 
 export const TotalContainer = styled.div`

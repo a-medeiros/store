@@ -13,6 +13,10 @@ export const LogoContainer = styled.div`
   align-items: center;
   height: 100%;
   padding-left: 65px;
+
+  @media (max-width: 516px) {
+    padding-left: 20px;
+  }
 `;
 
 export const Logo = styled.div`
@@ -52,6 +56,10 @@ export const CartContainer = styled.div`
   border-radius: 8px;
   margin-right: 88px;
   cursor: pointer;
+
+  @media (max-width: 516px) {
+    margin-right: 20px;
+  }
 `;
 
 export const NumberOfItems = styled.p`
