@@ -6,12 +6,15 @@ export const Container = styled.div<ContainerProps>`
   position: absolute;
   right: 0px;
   top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   z-index: 1;
   width: ${props => (props.isOpen ? '450px' : '0px')};
   height: 100%;
   background-color: #0f52ba;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
-  transition: width 0.3s;
+  transition: width 0.2s;
   overflow: hidden;
 `;
 
@@ -151,6 +154,33 @@ export const Price = styled.p`
   margin: 0;
 `;
 
-export const TotalContainer = styled.div``;
+export const TotalContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 30px;
+`;
 
-export const BuyButtonContainer = styled.div``;
+export const TotalText = styled.p`
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  color: #ffffff;
+`;
+
+export const BuyButtonContainer = styled.div`
+  height: 80px;
+  width: 450px;
+`;
+
+export const BuyButton = styled.button`
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  color: #ffffff;
+  width: 100%;
+  height: 80px;
+  background: #000000;
+  cursor: pointer;
+`;
